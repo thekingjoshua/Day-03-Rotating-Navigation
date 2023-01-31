@@ -1,0 +1,130 @@
+* {
+	margin: 0;
+	padding: 0;
+	box-sizing: border-box;
+	outline: none;
+	font-family: Arial;
+}
+html {
+	font-size: 62.5%;
+	overflow: hidden;
+}
+body {
+	background-color: gray;
+}
+.container {
+	width: 100%;
+	padding: 6rem 1rem 0;
+	transform-origin: top left;
+	height: 100vh;
+	background-color: #fff;
+	transition: transform 0.6s linear;
+}
+.content {
+	max-width: 100rem;
+	margin: 5rem auto;
+}
+.content h1 {
+	font-size: 2.3rem;
+	margin: 0 0 1rem 0;
+}
+.content small {
+	font-size: 1.5rem;
+	margin: 0 0.5rem 1rem 0;
+	color: rgb(117, 115, 115);
+	font-style: italic;
+}
+.content p {
+	font-size: 1.1rem;
+}
+.content img {
+	max-width: 100%;
+	height: 35vh;
+	object-fit: cover;
+}
+.container.show__nav {
+	transform: rotate(-20deg);
+}
+.container.show__nav .circle {
+	transform: rotate(-70deg);
+}
+.circle {
+	background-color: rgb(245, 132, 151);
+	height: 20rem;
+	width: 20rem;
+	border-radius: 50%;
+	position: relative;
+	transition: transform 0.5s linear;
+}
+.circle__container {
+	position: fixed;
+	top: -100px;
+	left: -100px;
+}
+.circle button {
+	position: absolute;
+	top: 50%;
+	left: 50%;
+	height: 10rem;
+	background: transparent;
+	border: none;
+	color: #fff;
+	font-size: 2rem;
+}
+.circle button:focus {
+	outline: none;
+}
+.circle button.open {
+	left: 60%;
+}
+.circle button.close {
+	top: 60%;
+	transform: rotate(90deg);
+	transform-origin: top left;
+}
+.container.show__nav + nav li {
+	transform: translateX(0);
+	transition-delay: 0.4s;
+}
+nav {
+	position: fixed;
+	bottom: 3rem;
+	left: 0;
+	z-index: 100;
+}
+nav ul {
+	list-style-type: none;
+	padding-left: 2rem;
+}
+nav ul li {
+	color: #fff;
+	text-transform: uppercase;
+	font-size: 1.3rem;
+	margin: 4rem 0;
+	transform: translateX(-100%);
+	transition: transform 0.4s ease-in-out;
+}
+nav ul li i.fa {
+	font-size: 2rem;
+	margin-right: 1rem;
+}
+nav ul li + li {
+	margin-left: 1.5rem;
+	transform: translateX(-150%);
+}
+nav ul li + li + li {
+	margin-left: 3rem;
+	transform: translateX(-200%);
+}
+footer {
+	position: absolute;
+	bottom: 1%;
+	width: 90vw;
+	text-align: center;
+	color: var(--theme-color);
+	font-size: 1.5rem;
+}
+footer a {
+	text-decoration: none;
+	color: var(--theme-color);
+}
